@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>User Registration or login form</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+input[type=text], input[type=password] {
+	width: 200px;
+	padding: 10px 20px;
+	display: inline-block;
+	height: 40px;
+	box-sizing: border-box;
+}
+
+.go {
+	width: 75px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 25px;
+	background-color: black;
+	color: white;
+}
+
+.login {
+	padding: .5%;
+	background-color: #ccc;
+}
+
+.inputs {
+	margin-bottom: 20px;
+	display: table;
+}
+
+.cancel {
+	width: 100px;
+	margin-bottom: 20px;
+	background-color: #ccc;
+	color: white;
+}
+
+.register {
+	margin-left: 20px;
+	width: 100px;
+	margin-bottom: 20px;
+	background-color: black;
+	color: white;
+}
+</style>
+
+</head>
+<body onload="Captcha()">
+	<form class="login" action="">
+
+		<div class="container">
+			<div style="display:;"></div>
+
+		</div>
+
+		<div class="container">
+
+			<div style="display: inline-block;">
+				<label></label> <label style="margin-right: 20px;">Already
+					Registered?</label>
+			</div>
+
+			<div style="display: inline-block;">
+
+				<label for="uname" style="margin-left: 12.5%;"><b>Email
+						ID</b></label> <input type="email"
+					style="height: 40px; width: 200px; display: table; margin-right: 20px;"
+					placeholder="   Enter Email ID" name="email" required>
+			</div>
+			<div style="display: inline-block;">
+				<label for="psw" style="margin-left: 21%;"><b>Password</b></label>
+				<input type="password" style="display: table; margin-right: 20px;"
+					placeholder="Enter Password" name="psw" required>
+			</div>
+			<div style="display: inline-block;">
+				<label style="margin-bottom: 18px; display: inline-block;">
+				</label>
+				<button type="submit" class="go"
+					style="display: table; margin-top: 8px;">GO</button>
+			</div>
+
+		</div>
+
+
+
+
+
+	</form>
+
+	<div
+		style="width: 100%; height: 10px; border-bottom: 1px solid black; text-align: center">
+		<span style="font-size: 15px; background-color: #F3F5F6;"> OR </span>
+	</div>
+	<form id="registerForm">
+		<div class="container">
+
+
+			<div style="display: inline-block; margin-right: 100px">
+				<label
+					style="margin-top: 30px; margin-bottom: 10px; font-size: 14px;">Register
+					As*</label> <select class="inputs" style="width: 200px" required>
+					<option>select member type</option>
+					<option value="0"></option>
+				</select> <label>Email ID*</label> <input class="inputs" type="email"
+					style="height: 40px; width: 200px; margin-top: 8px;"
+					placeholder="***@***.com" name="emailId" required /> <label>Password*</label>
+				<input class="inputs"
+					style="display: table; width: 200px; margin-bottom: 20px;"
+					type="password" placeholder="" required="required" /> <label>Full
+					name*</label> <input type="text"
+					style="display: table; width: 200px; margin-bottom: 20px;"
+					placeholder="first name" required="required" /> <label>Display
+					name</label> <input type="text"
+					style="display: table; width: 200px; margin-bottom: 20px;"
+					placeholder="" />
+			</div>
+
+
+			<div style="display: inline-block; margin-right: 100px;">
+				<label>Confirm Password*</label> <input class="inputs"
+					style="display: table; width: 200px; margin-bottom: 20px;"
+					type="password" placeholder="" required="required" /> <label>
+				</label> <input type="text"
+					style="display: table; width: 200px; margin-bottom: 20px;"
+					placeholder="middle name" /> <label>Mobile number*</label> <input
+					type="text"
+					style="display: table; width: 200px; margin-bottom: 20px;"
+					placeholder="Enter mobile number" required="required" />
+			</div>
+
+
+
+			<div style="display: inline-block;">
+				<label> </label> <input type="text"
+					style="display: table; width: 200px; margin-bottom: 20px;"
+					placeholder="last name" required="required" /> <label>Gender*</label>
+
+				<select style="width: 200px; display: table; height: 40px;"
+					required="required">
+					<option></option>
+					<option value="1">Male</option>
+					<option value="2" />Female
+				</select>
+			</div>
+
+
+			<div style="display: table;">
+				<div style="display: inline-block; margin-right: 100px;">
+					<label>CAPTCHA*</label> <input type="text" id="mainCaptcha"
+						style="width: 200px; display: table;" readonly="true" />
+				</div>
+				<div style="display: inline-block;">
+					<label>Enter code here*</label> <input type="text" id="txtInput"
+						style="display: table; width: 200px; margin-bottom: 20px;"
+						placeholder="" />
+				</div>
+			</div>
+
+
+			<div style="display: table;">
+				<input type="checkbox" id="check" name="check" value="check"
+					style="margin-right: 5px;" /><label> I have read,
+					understood and accepted the rules for membership </label>
+			</div>
+
+
+			<div style="display: table; float: right">
+				<input type="button" class="cancel" value="Cancel"
+					onclick="cancel()">
+				<button type="submit" class="register" onclick="ValidCaptcha(); ">Register</button>
+			</div>
+
+		</div>
+	</form>
+
+</body>
+<script type="text/javascript">
+	function Captcha() {
+		var alpha = new Array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+				'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+				'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+				'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+				'u', 'v', 'w', 'x', 'y', 'z');
+		var i;
+		for (i = 0; i < 6; i++) {
+			var a = alpha[Math.floor(Math.random() * alpha.length)];
+			var b = alpha[Math.floor(Math.random() * alpha.length)];
+			var c = alpha[Math.floor(Math.random() * alpha.length)];
+			var d = alpha[Math.floor(Math.random() * alpha.length)];
+			var e = alpha[Math.floor(Math.random() * alpha.length)];
+			var f = alpha[Math.floor(Math.random() * alpha.length)];
+			var g = alpha[Math.floor(Math.random() * alpha.length)];
+		}
+		var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' ' + f
+				+ ' ' + g;
+		document.getElementById("mainCaptcha").value = code
+	}
+	function ValidCaptcha() {
+		var string1 = removeSpaces(document.getElementById('mainCaptcha').value);
+		var string2 = removeSpaces(document.getElementById('txtInput').value);
+		if (string1 == string2) {
+			checkbox();
+			return true;
+		} else {
+			alert("Enter Valid Captcha!");
+			Captcha();
+			return false;
+		}
+	}
+	function removeSpaces(string) {
+		return string.split(' ').join('');
+	}
+	function checkbox() {
+		var string1 = document.getElementById('check');
+		if (string1.checked == true) {
+			return true;
+
+		} else {
+			alert("Please indicate that you read and understood the rules to continue");
+			return false;
+		}
+	}
+	function cancel() {
+		document.getElementById('registerForm').reset();
+		Captcha();
+	}
+</script>
+</html>
